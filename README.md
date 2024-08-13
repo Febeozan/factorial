@@ -46,7 +46,7 @@ Al final, por convenio se ha acordado que lo más útil es que el 0 factorial se
 ---
 
 ### En Kotlin seria de esta forma:
-
+~~~~
 fun factorial(n: Int): Long
 
 {
@@ -66,7 +66,36 @@ val number 5
 println("El factorial de $number es ${factorial(number)}")
 
 }
+~~~~
 
 Este codigo en Kotlin calcula el factorial de un numero utilizando recursividad.
 
-Funcion factorial
+### Funcion factorial
+~~~~
+fun factorial(n: Int): Long {
+~~~~
+• Esta linea define una funcion llamada factorial que toma un parametro n de tipo Int y devuelve un valor de tipo Long. Se utiliza Long para permitir el manejo de numeros grandes que pueden resultar del calculo del factorial.
+
+### Condicion Base
+~~~~
+if (n <= 1) { return 1 }
+~~~~
+• Aqui se verifica si n es menor o igual a 1. Si lo es, la funcion devuelve 1. Esto se debe a que el factorial de 0 y 1 es 1, y esta es la condicion base que detiene la recursion.
+
+### Llamada recursiva
+~~~~
+return n * factorial(n-1)
+~~~~
+• Si n es mayor que 1, la funcion calcula el factorial de n multiplicando n por el resultado de llamar a si misma con n - 1. Esta llamda recursiva continuara hasta que n llegue a 1 o 0, momento en el que se cativara la condicion base.
+
+### Funcion main
+~~~~
+fun main() {
+
+val number - 5
+
+println("El factorial de Snumber es ${factorial(number)}")
+~~~~
+• La funcion main es el punto de entrada del programa. Aqui se declara una variable number con el valor de 5.
+
+• Luego, se imprime el resultado del factorial de number utilizando la funcion factorial La expresion ${factorial(number)) llama la funcion factorial y muestra el resultado en la salida
